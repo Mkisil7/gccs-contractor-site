@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GCCS Contractor Services</title>
+<style>
+  body { margin:0;font-family: Arial, sans-serif; line-height:1.6; color:#333;}
+  header { background:#202a44; color:#fff; padding:40px 20px; text-align:center;}
+  header h1 { margin-bottom:10px; font-size:36px;}
+  header p { font-size:18px; margin:0;}
+  section { padding:40px 20px; max-width:1000px; margin:0 auto;}
+  .services { display:flex; flex-wrap:wrap; justify-content:space-between;}
+  .service { flex:1 1 30%; background:#f5f5f5; margin:10px; padding:20px; border-radius:8px;}
+  .service h3 { margin-top:0;}
+  .pricing { display:flex; flex-wrap:wrap; justify-content:center;}
+  .plan { flex:1 1 250px; margin:10px; padding:20px; border:1px solid #ddd; border-radius:8px;}
+  .plan h3 { margin-top:0;}
+  .plan .price { font-size:32px; color:#202a44; margin:10px 0;}
+  .results ul { list-style-type: disc; margin-left:20px;}
+  form { display:flex; flex-direction:column; }
+  form label { margin-top:10px;}
+  form input,form textarea { padding:10px; margin-top:5px; border:1px solid #ccc; border-radius:4px;}
+  form button { margin-top:20px; padding:10px; border:none; background:#202a44; color:#fff; border-radius:4px; cursor:pointer;}
+  @media(max-width:768px){
+    .services,.pricing {flex-direction:column;}
+    .service,.plan { flex:1 1 100%;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Contractor VA</h1>
+  <p>Your digital assistant for smarter contracting</p>
+  <a href="#contact" style="display:inline-block;margin-top:20px;padding:12px 24px;background:#00aaff;color:#fff;border-radius:4px;text-decoration:none;">Request a Trial</a>
+</header>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Job Coordination</h3>
+      <p>Organize your tasks, schedules and resources all in one place.</p>
+    </div>
+    <div class="service">
+      <h3>Progress Tracking</h3>
+      <p>Real-time updates and analytics to keep projects on schedule.</p>
+    </div>
+    <div class="service">
+      <h3>Documentation Automation</h3>
+      <p>Automatically generate proposals, invoices and reports.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2>Pricing</h2>
+  <div class="pricing">
+    <div class="plan">
+      <h3>Starter</h3>
+      <div class="price">Free</div>
+      <p>Basic tools for small contractors.</p>
+    </div>
+    <div class="plan">
+      <h3>Pro</h3>
+      <div class="price">$9/mo</div>
+      <p>Advanced project management features.</p>
+    </div>
+    <div class="plan">
+      <h3>Team</h3>
+      <div class="price">$19/mo</div>
+      <p>Collaboration and reporting tools.</p>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <h2>Results</h2>
+  <ul>
+    <li>Save hours on paperwork each week.</li>
+    <li>Improve job completion times by up to 30%.</li>
+    <li>Deliver better experiences for your clients.</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Interested in learning more? Fill out the form and we'll get back to you.</p>
+  <form id="contactForm">
+    <label for="name">Name</label>
+    <input id="name" type="text" required>
+    <label for="email">Email</label>
+    <input id="email" type="email" required>
+    <label for="company">Company</label>
+    <input id="company" type="text">
+    <label for="message">Message</label>
+    <textarea id="message" rows="4" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<footer style="text-align:center; padding:20px; background:#f5f5f5; color:#666;">
+  &copy; <span id="year"></span> Contractor VA. All rights reserved.
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var name = encodeURIComponent(document.getElementById('name').value);
+  var email = encodeURIComponent(document.getElementById('email').value);
+  var company = encodeURIComponent(document.getElementById('company').value);
+  var message = encodeURIComponent(document.getElementById('message').value);
+  var subject = 'Contractor VA Inquiry';
+  var body = 'Name: ' + name + '%0D%0AEmail: ' + email + '%0D%0ACompany: ' + company + '%0D%0AMessage: ' + message;
+  window.location.href = 'mailto:hello@gccs.local?subject=' + subject + '&body=' + body;
+});
+</script>
+
+</body>
+</html>
